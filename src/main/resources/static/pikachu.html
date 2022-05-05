@@ -52,8 +52,8 @@
             <div id="myPlot" style="width:100%;max-width:700px"></div>
 
             <script>
-                var xArray = ["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fight", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"];
-                var yArray = [1, 1, 1, 0.5, 1, 1, 1, 0.5];
+                var xArray = ["Attack","Defense","Special attack","Special defense","hp","speed"];
+                var yArray = [55, 40, 50, 50, 35, 90];
 
 
                 var data = [{
@@ -62,7 +62,7 @@
                     type:"bar"
                 }];
 
-                var layout = {title:"Effective against"};
+                var layout = {title:"Stats"};
 
                 Plotly.newPlot("myPlot", data, layout);
             </script>
