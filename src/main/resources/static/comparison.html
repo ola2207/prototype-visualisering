@@ -2,63 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pikachu vs Charmander</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="myChart"></canvas>
 
-<script>
+<canvas id="myChart" width="100%" height="100%"></canvas>
 
-    const data = {
-        labels: [
-            "Attack",
-            "Defense",
-            "Special attack",
-            "Special defense",
-            "hp",
-            "speed"
-        ],
-        datasets: [{
-            label: 'Pikachu',
-            data: [55, 40, 50, 50, 35, 90],
-            fill: true,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgb(255, 99, 132)',
-            pointBackgroundColor: 'rgb(255, 99, 132)',
-            pointBorderColor: '#fff',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgb(255, 99, 132)'
-        }, {
-            label: 'Charmander',
-            data: [52, 43, 60, 50, 39, 65],
-            fill: true,
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgb(54, 162, 235)',
-            pointBackgroundColor: 'rgb(54, 162, 235)',
-            pointBorderColor: '#fff',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgb(54, 162, 235)'
-        }]
-    };
-    const config = {
-        type: 'radar',
-        data: data,
-        options: {
-            elements: {
-                line: {
-                    borderWidth: 3
+
+    <script>
+
+        const data = {
+            labels: [
+                "Attack",
+                "Defense",
+                "Special attack",
+                "Special defense",
+                "hp",
+                "speed"
+            ],
+            datasets: [{
+                label: 'Pikachu',
+                data: [55, 40, 50, 50, 35, 90],
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(255, 99, 132)'
+            }, {
+                label: 'Charmander',
+                data: [52, 43, 60, 50, 39, 65],
+                fill: true,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(54, 162, 235)'
+            }]
+        };
+        const config = {
+            type: 'radar',
+            data: data,
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
                 }
-            }
-        },
-    };
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
+            },
+        };
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
 
-</script>
+    </script>
+</div>
+
 
 
 </body>

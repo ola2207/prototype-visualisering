@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Base stats comparison</h1>
+<div id='myDiv'>
+    <script>
+        data = [
+            {
+                type: 'scatterpolar',
+                r: [55, 40, 50, 50, 35, 90],
+                theta: ['Attack','Defense','Special attack', 'Special defense', 'HP', 'Speed'],
+                fill: 'toself',
+                name: 'Pikachu'
+            },
+            {
+                type: 'scatterpolar',
+                r: [52, 43, 60, 50, 39, 65],
+                theta: ['Attack','Defense','Special attack', 'Special defense', 'HP', 'Speed'],
+                fill: 'toself',
+                name: 'Charmander'
+            }
+        ]
+
+        layout = {
+            polar: {
+                radialaxis: {
+                    visible: true,
+                    range: [0, 100]
+                }
+            }
+        }
+
+
+        Plotly.newPlot("myDiv", data, layout, {responsive: true})
+    </script>
+</div>
+</body>
+</html>
