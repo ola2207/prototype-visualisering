@@ -28,55 +28,79 @@
     <hr>
     <div class="row">
         <div class="col">
+            <div id='myDiv' style="width:100%;max-width:700px">
+                <script>
+                    var xValue = ["Attack","Defense","Special attack","Special defense","hp","speed"];
 
-            <div id="myPlot" style="width:100%;max-width:700px"></div>
-            <script>
-                var xArray = ["Attack","Defense","Special attack","Special defense","hp","speed"];
-                var yArray = [55, 40, 50, 50, 35, 90];
+                    var yValue = [55, 40, 50, 50, 35, 90];
 
+                    var trace1 = {
+                        x: xValue,
+                        y: yValue,
+                        type: 'bar',
+                        text: yValue.map(String),
+                        textposition: 'auto',
+                        hoverinfo: 'none',
+                        marker: {
+                            color: 'rgb(158,202,225)',
+                            opacity: 0.6,
+                            line: {
+                                color: 'rgb(8,48,107)',
+                                width: 1.5
+                            }
+                        }
+                    };
 
-                var data = [{
-                    x:xArray,
-                    y:yArray,
-                    type:"bar"
-                }];
+                    var data = [trace1];
 
-                var layout = {title:"Base stats"};
+                    var layout = {
+                        title: 'Base Stats',
+                        barmode: 'stack'
+                    };
 
+                    Plotly.newPlot('myDiv', data, layout, {displayModeBar: false});
 
-                Plotly.newPlot("myPlot", data, layout);
-            </script>
-            <a href="selectComparePika.html" class="btn btn-primary">Compare base stats to other pokemon</a>
+                </script>
+                <a href="selectComparePika.html" class="btn btn-primary">Compare base stats to other pokemon</a>
+
+            </div>
         </div>
 
 
+
+
         <div class="col">
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-            <script>
-                var xValues = ["Ground", "Dark", "Dragon", "Water", "Fairy", "Fight", "Fire", "Rock", "Ghost", "Grass", "Bug", "Ice", "Normal", "Poison", "Psychic", "Flying", "Steel", "Electric", ""];
-                var yValues = [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0];
-                var barColors = ["olive", "black","red","yellow","pink","gray","orange", "deepskyblue", "purple", "green", "sienna", "lightsteelblue", "gray", "purple", "magenta", "gray", "silver", "aqua"];
+            <table class="table table-bordered" style="margin-top: 30%">
+                <thead>
+                <tr>
 
-                new Chart("myChart", {
-                    type: "bar",
-                    data: {
-                        labels: xValues,
-                        datasets: [{
-                            backgroundColor: barColors,
-                            data: yValues
-                        }]
-                    },
-                    options: {
-                        legend: {display: false},
-                        title: {
-                            display: true,
-                            text: "Pokemon types' effectiveness against pikachu"
-                        }
-                    },
+                    <th scope="col" style="color: red">Vulnerable to</th>
+                    <th scope="col" style="color: green">Resistant to</th>
 
-                });
-            </script>
-            <p>This chart indicates how much damage pikachu will take from an attack by different pokemon types. The higher the value, the more damage pikachu will take.</p>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                    <td>Ground</td>
+                    <td>Flying</td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td>Steel</td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td>Electric</td>
+
+                </tr>
+                </tbody>
+            </table>
+
         </div>
 
     </div>
