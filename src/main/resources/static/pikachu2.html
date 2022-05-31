@@ -43,36 +43,44 @@
 
                 var layout = {title:"Base stats"};
 
+
                 Plotly.newPlot("myPlot", data, layout);
             </script>
             <a href="selectComparePika.html" class="btn btn-primary">Compare base stats to other pokemon</a>
         </div>
-        <div class="col">
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-            <script>
-                var xValues = ["Ground", "Dark", "Dragon", "Water", "Fairy", "Fight", "Fire", "Rock", "Ghost", "Grass", "Bug", "Ice", "Normal", "Poison", "Psychic", "Flying", "Steel", "Electric", ""];
-                var yValues = [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0];
-                var barColors = ["olive", "black","red","yellow","pink","gray","orange", "deepskyblue", "purple", "green", "sienna", "lightsteelblue", "gray", "purple", "magenta", "gray", "silver", "aqua"];
 
-                new Chart("myChart", {
-                    type: "bar",
-                    data: {
-                        labels: xValues,
-                        datasets: [{
-                            backgroundColor: barColors,
-                            data: yValues
+
+        <div class="col">
+            <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV -->
+                <script>
+                    var data = [
+                        {
+                            type: 'bar',
+                            x: ['2016','2017','2018'],
+                            y: [0.5,0.5,0.5],
+                            base: [-500,-600,-700],
+                            hovertemplate: '%{base}',
+                            marker: {
+                                color: 'red'
+                            },
+                            name: 'expenses'
+                        },
+                        {
+                            type: 'bar',
+                            x: ['2016','2017','2018'],
+                            y: [300,400,700],
+                            base: 0,
+                            marker: {
+                                color: 'blue'
+                            },
+                            name: 'revenue'
                         }]
-                    },
-                    options: {
-                        legend: {display: false},
-                        title: {
-                            display: true,
-                            text: "Pokemon types' effectiveness against pikachu"
-                        }
-                    },
-                    
-                });
-            </script>
+
+                    Plotly.newPlot('myDiv', data);
+
+
+                </script>
+            </div>
             <p>This chart indicates how much damage pikachu will take from an attack by different pokemon types. The higher the value, the more damage pikachu will take.</p>
         </div>
 
